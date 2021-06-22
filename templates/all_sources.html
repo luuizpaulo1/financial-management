@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Financial management</title>
+</head>
+<header class="header-bar">
+
+</header>
+<body>
+
+    <table class="table-striped table-bordered" style="width:100%">
+        <tr>
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Balance</th>
+            <th>Closing day</th>
+            <th>Limit</th>
+        </tr>
+
+        {% for source in sources %}
+        <tr>
+            <td>{{ source.id }}</td>
+            <td>{{ source.user_id }}</td>
+            <td>{{ source.name }}</td>
+            <td>R${{ "{:.2f}".format(source.balance/100) }}</td>
+            <td>{{ source.closing_day }}</td>
+            <td>{{ source.limit }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

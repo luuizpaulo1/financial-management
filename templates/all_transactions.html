@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Financial management</title>
+</head>
+<header class="header-bar">
+
+</header>
+<body>
+
+    <table class="table-striped table-bordered" style="width:100%">
+        <tr>
+            <th>ID</th>
+            <th>User ID</th>
+            <th>Source ID</th>
+            <th>Category</th>
+            <th>Subcategory</th>
+            <th>Amount</th>
+            <th>Method</th>
+
+        </tr>
+
+        {% for transaction in transactions %}
+        <tr>
+            <td>{{ transaction.id }}</td>
+            <td>{{ transaction.user_id }}</td>
+            <td>{{ transaction.source_id }}</td>
+            <td>{{ transaction.category }}</td>
+            <td>{{ transaction.subcategory }}</td>
+            <td>R${{ "{:.2f}".format(transaction.amount/100) }}</td>
+            <td>{{ transaction.method }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
