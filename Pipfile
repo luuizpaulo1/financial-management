@@ -10,6 +10,7 @@ flask-sqlalchemy = "*"
 psycopg2 = "*"
 jinja2 = "*"
 flask-login = "*"
+gunicorn = "*"
 
 [dev-packages]
 
